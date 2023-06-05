@@ -4,7 +4,7 @@ let bgImages = [];
 let textImages = [];
 let words = [];
 let myFont;
-var scalerPerc = .75;
+var scalerPerc = .33;
 let logo;
 var bgCounter = 0;
 var vKey = 0;
