@@ -20,24 +20,33 @@ function preload() {
 	bgImagesL[2] = loadImage('assets/sunflowers_L.png');
 	bgImagesL[3] = loadImage('assets/duchess_L.png');
 	bgImagesL[4] = loadImage('assets/sunflowers_L.png');
+	bgImagesL[5] = loadImage('assets/duchess_L.png');
+	bgImagesL[6] = loadImage('assets/rouseau_L.png');
 
 	bgImagesR[0] = loadImage('assets/duchess_L.png');
 	bgImagesR[1] = loadImage('assets/sunflowers_L.png');
 	bgImagesR[2] = loadImage('assets/whistlejacket_L.png');
 	bgImagesR[3] = loadImage('assets/whistlejacket_L.png');
 	bgImagesR[4] = loadImage('assets/duchess_L.png');
+	bgImagesR[5] = loadImage('assets/whistlejacket_L.png');
+	bgImagesR[6] = loadImage('assets/rouseau_R.png');
+
 
 	textImagesL[0] = loadImage('assets/opening_soon_text_L.png');
 	textImagesL[1] = loadImage('assets/opening_soon_text_L.png');
 	textImagesL[2] = loadImage('assets/open_L.png');
 	textImagesL[3] = loadImage('assets/open_late_L.png');
 	textImagesL[4] = loadImage('assets/closing_soon_L.png');
+	textImagesL[5] = loadImage('assets/closed_L.png');
+	textImagesL[6] = loadImage('assets/closed_L.png');
 
 	textImagesR[0] = loadImage('assets/on_today_R.png');
-	textImagesR[1] = loadImage('assets/opening_soon_text_L.png');
-	textImagesR[2] = loadImage('assets/opening_soon_text_L.png');
-	textImagesR[3] = loadImage('assets/opening_soon_text_L.png');
-	textImagesR[4] = loadImage('assets/opening_soon_text_L.png');
+	textImagesR[1] = loadImage('assets/on_today_R.png');
+	textImagesR[2] = loadImage('assets/on_today_R.png');
+	textImagesR[3] = loadImage('assets/on_today_R.png');
+	textImagesR[4] = loadImage('assets/on_tomorrow_R.png');
+	textImagesR[5] = loadImage('assets/on_tomorrow_R.png');
+	textImagesR[6] = loadImage('assets/on_tomorrow_R.png');
 
 	myFont = loadFont('assets/DMSans-Medium.ttf');
 	logo = loadImage('assets/logo.png');
@@ -153,7 +162,7 @@ function drawTextLayerR() {
 	let w = textImagesL[vKey].width * scalerPerc;
 	let h = textImagesL[vKey].height * scalerPerc;
 
-	image(textImagesR[0], x, y, w, h);
+	image(textImagesR[vKey], x, y, w, h);
 	image(logo, windowWidth / 4*3 - (logo.width * scalerPerc) / 3, windowHeight / 2 - textImagesL[0].height * scalerPerc / 3 - logo.height / 1.8, logo.width * scalerPerc / 1.5, logo.height * scalerPerc / 1.5);
 
 }
@@ -177,7 +186,7 @@ function drawFrameR() {
 }
 
 function keyTyped() {
-	if (key >= 0 & key <= 4 & keyCode !== 32) {
+	if (key >= 0 & key <= 6 & keyCode !== 32) {
 		vKey = key;
 	}
 	//drawBgL(key);
@@ -185,7 +194,7 @@ function keyTyped() {
 }
 
 function touchStarted() {
-	if (vKey < 4) {
+	if (vKey < 6) {
 		vKey++;
 	} else {
 		vKey = 0;
