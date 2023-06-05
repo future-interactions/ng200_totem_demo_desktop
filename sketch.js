@@ -15,38 +15,51 @@ var vKey = 0;
 var swingAmount = 4;
 var overhang = 0;
 function preload() {
-	bgImagesL[0] = loadImage('assets/whistlejacket_L.png');
-	bgImagesL[1] = loadImage('assets/whistlejacket_L.png');
+	bgImagesL[0] = loadImage('assets/error_img.png');
+	bgImagesL[1] = loadImage('assets/hodler.png');
 	bgImagesL[2] = loadImage('assets/sunflowers_L.png');
 	bgImagesL[3] = loadImage('assets/duchess_L.png');
-	bgImagesL[4] = loadImage('assets/sunflowers_L.png');
-	bgImagesL[5] = loadImage('assets/duchess_L.png');
+	bgImagesL[4] = loadImage('assets/eyck.png');
+	bgImagesL[5] = loadImage('assets/francesca.png');
 	bgImagesL[6] = loadImage('assets/rouseau_L.png');
+	bgImagesL[7] = loadImage('assets/entrance_closed_img_L.png');
+	bgImagesL[8] = loadImage('assets/closed_img_L.png');
 
-	bgImagesR[0] = loadImage('assets/duchess_L.png');
-	bgImagesR[1] = loadImage('assets/sunflowers_L.png');
-	bgImagesR[2] = loadImage('assets/whistlejacket_L.png');
-	bgImagesR[3] = loadImage('assets/whistlejacket_L.png');
-	bgImagesR[4] = loadImage('assets/duchess_L.png');
+
+
+	bgImagesR[0] = loadImage('assets/error_img.png');
+	bgImagesR[1] = loadImage('assets/bellini.png');
+	bgImagesR[2] = loadImage('assets/haywain.png');
+	bgImagesR[3] = loadImage('assets/pechstein.png');
+	bgImagesR[4] = loadImage('assets/titian.png');
 	bgImagesR[5] = loadImage('assets/whistlejacket_L.png');
 	bgImagesR[6] = loadImage('assets/rouseau_R.png');
+	bgImagesR[7] = loadImage('assets/entrance_closed_img_R.png');
+	bgImagesR[8] = loadImage('assets/closed_img_R.png');
 
 
-	textImagesL[0] = loadImage('assets/opening_soon_text_L.png');
+	textImagesL[0] = loadImage('assets/error_text.png');
 	textImagesL[1] = loadImage('assets/opening_soon_text_L.png');
 	textImagesL[2] = loadImage('assets/open_L.png');
 	textImagesL[3] = loadImage('assets/open_late_L.png');
 	textImagesL[4] = loadImage('assets/closing_soon_L.png');
 	textImagesL[5] = loadImage('assets/closed_L.png');
 	textImagesL[6] = loadImage('assets/closed_L.png');
+	textImagesL[7] = loadImage('assets/entrance_closed.png');
+	textImagesL[8] = loadImage('assets/gallery_closed.png');
 
-	textImagesR[0] = loadImage('assets/on_today_R.png');
+
+	textImagesR[0] = loadImage('assets/error_text.png');
 	textImagesR[1] = loadImage('assets/on_today_R.png');
 	textImagesR[2] = loadImage('assets/on_today_R.png');
 	textImagesR[3] = loadImage('assets/on_today_R.png');
 	textImagesR[4] = loadImage('assets/on_tomorrow_R.png');
 	textImagesR[5] = loadImage('assets/on_tomorrow_R.png');
 	textImagesR[6] = loadImage('assets/on_tomorrow_R.png');
+	textImagesR[7] = loadImage('assets/entrance_closed.png');
+	textImagesR[8] = loadImage('assets/gallery_closed.png');
+
+
 
 	myFont = loadFont('assets/DMSans-Medium.ttf');
 	logo = loadImage('assets/logo.png');
@@ -89,7 +102,7 @@ function drawBgL() {
 
 	//background(255);
 	let sinSize = 400;
-	bgCounterL += 0.005;
+	bgCounterL += 0.002;
 	//let x = windowWidth / 2 - (bgImages[vKey].width * scalerPerc) / 2;
 	let x = windowWidth / 4 - (bgImagesL[vKey].width * scalerPerc) / 2 + (sin(bgCounterL) * (bgImagesL[vKey].width * scalerPerc) / swingAmount);
 	let y = windowHeight / 2 - (bgImagesL[vKey].height * scalerPerc) / 2;
@@ -105,7 +118,7 @@ function drawBgR() {
 
 	//background(255);
 	let sinSize = 400;
-	bgCounterR += 0.005;
+	bgCounterR += 0.002;
 	//let x = windowWidth / 2 - (bgImages[vKey].width * scalerPerc) / 2;
 	let x = windowWidth / 4 * 3 - (bgImagesL[vKey].width * scalerPerc) / 2 + (sin(bgCounterR) * (bgImagesL[vKey].width * scalerPerc) / swingAmount);
 	let y = windowHeight / 2 - (bgImagesL[vKey].height * scalerPerc) / 2;
@@ -186,7 +199,7 @@ function drawFrameR() {
 }
 
 function keyTyped() {
-	if (key >= 0 & key <= 6 & keyCode !== 32) {
+	if (key >= 0 & key <= 8 & keyCode !== 32) {
 		vKey = key;
 	}
 	//drawBgL(key);
@@ -194,7 +207,7 @@ function keyTyped() {
 }
 
 function touchStarted() {
-	if (vKey < 6) {
+	if (vKey < 8) {
 		vKey++;
 	} else {
 		vKey = 0;
