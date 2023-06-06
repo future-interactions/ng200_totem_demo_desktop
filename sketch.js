@@ -160,7 +160,7 @@ function drawGuides() {
 }
 
 function drawTextLayerL() {
-	let x = windowWidth / 4 - (textImagesL[vKey].width * scalerPerc) / 2;
+	let x = windowWidth / 4 - (textImagesL[vKey].width * scalerPerc) / 1.8;
 	let y = windowHeight / 2 - (textImagesL[vKey].height * scalerPerc) / 2;
 	let w = textImagesL[vKey].width * scalerPerc;
 	let h = textImagesL[vKey].height * scalerPerc;
@@ -171,7 +171,7 @@ function drawTextLayerL() {
 }
 
 function drawTextLayerR() {
-	let x = windowWidth / 4*3 - (textImagesL[vKey].width * scalerPerc) / 2;
+	let x = windowWidth / 4*3 - (textImagesL[vKey].width * scalerPerc) / 1.8;
 	let y = windowHeight / 2 - (textImagesL[vKey].height * scalerPerc) / 2;
 	let w = textImagesL[vKey].width * scalerPerc;
 	let h = textImagesL[vKey].height * scalerPerc;
