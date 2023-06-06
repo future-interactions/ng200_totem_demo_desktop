@@ -86,15 +86,15 @@ function setup() {
 
 function draw() {
 	drawBgL();
+	drawBgR();
+	drawTextLayerL();
+	drawTextLayerR();
 	//drawTextL();
 	//drawMask();
-	drawTextLayerL();
 	//drawGuides();
 	drawFrameL();
-
-	drawBgR();
-	drawTextLayerR();
 	drawFrameR();
+	filter(GRAY);
 }
 
 function drawBgL() {
@@ -125,6 +125,7 @@ function drawBgR() {
 	let w = bgImagesR[vKey].width * scalerPerc;
 	let h = bgImagesR[vKey].height * scalerPerc;
 	image(bgImagesR[vKey], x, y, w, h);
+
 	overhang = (bgImagesR[vKey].width * scalerPerc) / swingAmount;
 	stroke(255);
 }
